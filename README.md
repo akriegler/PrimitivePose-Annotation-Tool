@@ -3,7 +3,7 @@
 ### Introduction
 We publish the annotation tool for PrimitivePose in this project.
 
-PrimitivePose is an end-to-end Convolutional Neural Network built on CenterNet [src] for 3D bounding box estimation of unseen objects.
+PrimitivePose is an end-to-end Convolutional Neural Network built on CenterNet for 3D bounding box estimation of unseen objects.
 In this repository we make the tool used to generate ground truth object pose annotations for our evaluations public. 
 It uses fSpy to calibrate a monocular camera and obtain a virtual camera model. This is then imported in the Blender software and 
 used together with 3D geometric primitive models of the objects to annotate their poses. Annotations are finally exported into .yml files 
@@ -14,7 +14,7 @@ The annotation pipeline was presented in our paper: [ResearchGate - coming soon]
 
 Authors: [Andreas Kriegler](https://www.researchgate.net/profile/Andreas-Kriegler), 
 [Csaba Beleznai](https://www.ait.ac.at/ueber-das-ait/researcher-profiles/?tx_aitprofile_pi1%5Bname%5D=Beleznai+Csaba),
-[Markus Murschitz](https://www.researchgate.net/profile/Markus-Murschitz)
+[Markus Murschitz](https://www.researchgate.net/profile/Markus-Murschitz),
 [Kai Göbel](https://www.researchgate.net/profile/Kai-Goebel-2)
 and [Margrit Gelautz](https://informatics.tuwien.ac.at/people/margrit-gelautz) 
 
@@ -131,7 +131,7 @@ It is likely that the Blender bounding boxes differ in size from the real object
 irrelevant for extracting the pose of the objects. If you notice strong disagreements that also affect angles you might
 want to consider repeating the calibration with fSpy. 
 
-### 4) Label export 
+### 4) Annotation export 
 
 When all objects have been aligned for the current frame, pose annotations can be calculated and exported. To do so,
 create a new collection (right-click Scene Collection -> New Collection) called "POSE_OBJECTS". For all objects that are 
