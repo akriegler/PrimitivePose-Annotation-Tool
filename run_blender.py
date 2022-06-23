@@ -17,11 +17,11 @@ import subprocess
 
 def run_blender():
     if os.name == 'nt':
-        blender = os.path.join(r"""C:\global_path\blender\blender.exe""")
-        subprocess.run([blender, r"""C:\global_path\PrimitivePose\demo\blender\example.blend"""])
+        blender = os.path.join(r"""C:\path-to-blender\blender\blender.exe""")
+        subprocess.run([blender, r"""C:\path-to-repo\PrimitivePose_Annotation_Tool\demo\blender\example.blend"""])
     elif os.name == 'posix':
-        blender = os.path.join('/home/krieglera/Blender/blender-3.0.1-linux-x64/blender')
-        subprocess.run([blender, './iros_tabletop.blend'])
+        blender = os.path.join('/path-to-blender/Blender/blender-3.0.1-linux-x64/blender')
+        subprocess.run([blender, './demo/blender/example.blend'])
 
 
 if __name__ == "__main__":
