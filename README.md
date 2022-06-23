@@ -10,6 +10,10 @@ used together with 3D geometric primitive models of the objects to annotate thei
 and also visualized via overlays on the input images.
 The manual annotation effort is resonable (2-5 minutes per image) - this pipeline is suited for annotation of real test data (100s to 1000s of images).
 
+<p align="center">
+<img width=80% src="assets/ex_visu.png">
+</p>
+
 The annotation pipeline was presented in our paper: [ResearchGate - coming soon](researchgate-link), [WACV2023 - coming soon](wacv-link)
 
 Authors: [Andreas Kriegler](https://www.researchgate.net/profile/Andreas-Kriegler), 
