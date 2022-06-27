@@ -20,7 +20,7 @@ def run_blender():
         blender = os.path.join(r"""C:\path-to-blender\blender\blender.exe""")
         subprocess.run([blender, r"""C:\path-to-repo\PrimitivePose_Annotation_Tool\demo\blender\example.blend"""])
     elif os.name == 'posix':
-        blender = os.path.join('/path-to-blender/Blender/blender-3.0.1-linux-x64/blender')
+        blender = os.path.join('/path-to-blender/Blender/blender-3.2.0-linux-x64/blender')
         subprocess.run([blender, './demo/blender/example.blend'])
 
 

@@ -33,8 +33,12 @@ import cv2
 import numpy as np
 from pathlib import Path
 
-root_path = "path-to-repo"
-
+if os.name == 'nt':
+    print('Please set the root path to this repository including the directory itself')
+    raise FileNotFoundError
+    #root_path = "..."
+else:
+    root_path = os.getcwd()
 utils_path = root_path + '/utils'
 
 if utils_path not in sys.path:
@@ -236,8 +240,5 @@ if __name__ == "__main__":
         # Debug visualization export
         rtools.save_result_im(vis_im, params['img_name'],
                               params['pose_visu_path'])  # Debug is True for debug overlays
-
-        if params['save_blend_file']:
-            bpy.ops.wm.save_as_mainfile(filepath=str(params['pose_blend_path']) + '/' + str(params['img_name']).split('.')[0] + '.blend' )
 
     print('====== Annotation export finished =====\n')

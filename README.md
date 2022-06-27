@@ -31,7 +31,7 @@ validate the pose annotation step.
 * The fSpy software. Used to create a virtual camera file with intrinsic and extrinsic calibration.
 * The Blender software (we used 3.0) with fSpy addon. Used for the annotation process itself.
 
-All software is freely available. The tool was tested on Ubuntu 20.04, using Blender 3.0.1, fSpy 1.0.3 and Python 3.9
+All software is freely available. The tool was tested on Ubuntu 20.04, using Blender 3.0.1, fSpy 1.0.3 and Python 3.9.
 Additionally it was tested on Windows 10, using Blender 3.0.1, fSpy 1.0.3 and Python 3.9.7
 
 ### Sofware-Setup
@@ -45,9 +45,8 @@ This provides the additional benefits of a proper editor if you want to change t
 Set the python interpreter in the IDE to Blender python. Then: 
 
 * Run [pip_install.py](utils/pip_install.py) to install the dependencies for Blender python
-* Configure paths in [run_blender.py](run_blender.py)
-* (Optional) ZEDCam setup: The only requirements are a static monocular camera. We used the ZEDCam2 although stereo images 
-* are NOT required ([doc](https://www.stereolabs.com/docs/installation/)). 
+* Configure the blender path in [run_blender.py](run_blender.py) and set your own .blend file
+* (Optional) ZEDCam setup: The only requirements are a static monocular camera. We used the ZEDCam2 although stereo images are NOT required ([doc](https://www.stereolabs.com/docs/installation/)). 
 
 ### 1) Extrinsic camera calibration + capturing image data
 A calibration pattern is required that features two sets of two parallel lines, the sets orthogonal to one another, for example a rectangle. 

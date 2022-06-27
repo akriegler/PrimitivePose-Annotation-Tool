@@ -21,11 +21,12 @@ python_exe = None
 if os.name == 'nt':
     python_exe = sys.executable
 elif os.name == 'posix':
-    python_exe = os.path.join(sys.prefix, 'bin', 'python3.9')
+    python_exe = os.path.join(sys.prefix, 'bin', 'python3.10')
 else:
     print('Unknown platform/operating system.')
     raise NotImplementedError
 
+subprocess.call([python_exe, "-m", "ensurepip", "--upgrade"])
 subprocess.call([python_exe, "-m", "pip", "install", "--upgrade", "pip"])
 subprocess.call([python_exe, "-m", "pip", "install", "opencv-python"])
 subprocess.call([python_exe, "-m", "pip", "install", "scipy"])
