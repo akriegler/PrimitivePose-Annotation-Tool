@@ -189,5 +189,3 @@ splitting the image in left and right halves.
 Tip: Set the parameter 'force_symmetry_angle_zero' to True when modeling object with cylindrical (or spherical) meshes to resolve ambiguities.
 Additionally, for planar objects you can force the out of plane rotation angle to be 0 with 'force_planar_angle_zero', alleviating imprecision of the
 fSpy calibration. 
-
-### Soon (BONUS): Exporting per-pixel depth images
