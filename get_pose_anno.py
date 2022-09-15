@@ -73,7 +73,7 @@ def set_params(camera_name, img_name):
     # path configs
     img_abspath = Path(bpy.path.abspath(bpy.data.images[img_name].filepath))
 
-    params['out_path'] = img_abspath.parent.parent.resolve()  # Path('D:/xpose_stuff/data/clutterd_primitives/view_0/large_obj/pose')
+    params['out_path'] = img_abspath.parent.parent.resolve()
     gt_path = params['out_path'] / 'gt'
     params['pose_gt_path'] = gt_path / 'anno_files'
     params['pose_visu_path'] = gt_path / 'debug_imgs'
