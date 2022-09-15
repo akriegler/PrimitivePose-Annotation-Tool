@@ -1,4 +1,4 @@
-# PrimitivePose-Annotation-Tool: A Tool to Annotate 6DoF Pose of Arbitrary Objects from RGB Images of Uncalibrated Cameras
+# PrimitivePose Annotation-Tool: A Tool to Annotate 6DoF Pose of Arbitrary Objects from RGB Images of Uncalibrated Cameras
 
 ### Introduction
 We publish the annotation tool for PrimitivePose in this project.
@@ -8,13 +8,13 @@ In this repository we make the tool used to generate ground truth object pose an
 It uses fSpy to calibrate a monocular camera and obtain a virtual camera model. This is then imported in the Blender software and 
 used together with 3D geometric primitive models of the objects to annotate their poses. Annotations are finally exported into .yml files 
 and also visualized via overlays on the input images.
-The manual annotation effort is resonable (2-5 minutes per image) - this pipeline is suited for annotation of real test data (100s to 1000s of images).
+The manual annotation effort is resonable (3-5 minutes per image) - this pipeline is suited for annotation of real test data (100s to 1000s of images).
 
 <p align="center">
 <img width=80% src="assets/ex_visu.png">
 </p>
 
-The annotation pipeline was presented in our paper: [ResearchGate - coming soon](researchgate-link), [WACV2023 - coming soon](wacv-link)
+The annotation pipeline was presented in our paper: [ResearchGate (coming soon)](researchgate-link), [ICR 2022 (coming soon)](wacv-link)
 
 Authors: [Andreas Kriegler](https://www.researchgate.net/profile/Andreas-Kriegler), 
 [Csaba Beleznai](https://www.ait.ac.at/ueber-das-ait/researcher-profiles/?tx_aitprofile_pi1%5Bname%5D=Beleznai+Csaba),
@@ -87,7 +87,7 @@ Drag the endpoints for alignment.
 
 Finally, save the calibration as a .fspy file  via "File -> Save as"-
 
-Tips: Selecting rectangle mode helps with alignment. Holding the SHIFT key provides local magnification. 
+Tip: Selecting rectangle mode helps with alignment. Holding the SHIFT key provides local magnification. 
 Setting the 3D guide to "xy grid floor" visualizes the estimated ground plane. The origin of the estimated coordinate 
 frame can be dragged around. For later steps, the Z axis should be pointing upwards from the object plane. Generally, 
 setting the principal point to the image midpoint gives best results. 
@@ -186,7 +186,7 @@ splitting the image in left and right halves.
 * X_occ_pix_perc gives the percentage of 2D object pixels that are occluded by another object. This ranges from
 0 to 100 for fully visible or fully occluded objects respectively. This is useful for filtering occluded objects.
 
-Tips: Set the parameter 'force_symmetry_angle_zero' to True when modeling object with cylindrical (or spherical) meshes to resolve ambiguities.
+Tip: Set the parameter 'force_symmetry_angle_zero' to True when modeling object with cylindrical (or spherical) meshes to resolve ambiguities.
 Additionally, for planar objects you can force the out of plane rotation angle to be 0 with 'force_planar_angle_zero', alleviating imprecision of the
 fSpy calibration. 
 
