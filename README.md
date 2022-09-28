@@ -14,7 +14,7 @@ The manual annotation effort is resonable (3-5 minutes per image) - this pipelin
 <img width=80% src="assets/ex_visu.png">
 </p>
 
-The annotation pipeline was presented in our paper: [ResearchGate (coming soon)](researchgate-link), [IRC 2022 (coming soon)](irc-link)
+The annotation pipeline was presented in our paper: [ResearchGate](https://www.researchgate.net/publication/363816642_PrimitivePose_3D_Bounding_Box_Prediction_of_Unseen_Objects_via_Synthetic_Geometric_Primitives), [IRC 2022 (coming soon)](irc-link)
 
 Authors: [Andreas Kriegler](https://www.researchgate.net/profile/Andreas-Kriegler), 
 [Csaba Beleznai](https://www.ait.ac.at/ueber-das-ait/researcher-profiles/?tx_aitprofile_pi1%5Bname%5D=Beleznai+Csaba),
