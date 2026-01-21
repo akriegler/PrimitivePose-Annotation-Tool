@@ -14,7 +14,7 @@ The manual annotation effort is resonable (3-5 minutes per image) - this pipelin
 <img width=80% src="assets/ex_visu.png">
 </p>
 
-The annotation pipeline was presented in our paper: [IJSC](https://dx.doi.org/10.1142/S1793351X23620027), [RG](https://www.researchgate.net/publication/371451754_PrimitivePose_Generic_Model_and_Representation_for_3D_Bounding_Box_Prediction_of_Unseen_Objects#fullTextFileContent)
+The annotation pipeline was presented in our paper: [IJSC](https://dx.doi.org/10.1142/S1793351X23620027), [RG](https://www.researchgate.net/publication/371451754_PrimitivePose_Generic_Model_and_Representation_for_3D_Bounding_Box_Prediction_of_Unseen_Objects#fullTextFileContent), [(PDF)](https://github.com/akriegler/akriegler.github.io/blob/master/assets/pdf/kriegler2023.pdf)
 
 Authors: [Andreas Kriegler](https://www.researchgate.net/profile/Andreas-Kriegler), 
 [Csaba Beleznai](https://www.ait.ac.at/ueber-das-ait/researcher-profiles/?tx_aitprofile_pi1%5Bname%5D=Beleznai+Csaba),
