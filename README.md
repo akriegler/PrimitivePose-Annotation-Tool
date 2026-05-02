@@ -1,6 +1,33 @@
 # PrimitivePose Annotation-Tool: A Tool to Annotate 6DoF Pose of Arbitrary Objects from RGB Images of Uncalibrated Cameras
 
-### Introduction
+## Publication 
+
+Paper: [IJSC](https://www.worldscientific.com/doi/10.1142/S1793351X23620027), [PDF](https://andreaskriegler.eu/assets/pdf/kriegler2023.pdf) 
+
+Authors: [Andreas Kriegler](https://andreaskriegler.eu/), 
+[Csaba Beleznai](https://publications.ait.ac.at/de/persons/csaba.beleznai/),
+[Markus Murschitz](https://orcid.org/0000-0002-5199-4602),
+[Kai Göbel](https://www.researchgate.net/profile/Kai-Goebel-2)
+and [Margrit Gelautz](https://informatics.tuwien.ac.at/people/margrit-gelautz) 
+
+If you use this project, please cite:
+
+```bibtex
+@article{Kriegler2023,
+  author = {Kriegler, Andreas and Beleznai, Csaba and Gelautz, Margrit and Murschitz, Markus and Göbel, Kai},
+  title = {PrimitivePose: Generic Model and Representation for 3D Bounding Box Prediction of Unseen Objects},
+  journal = {International Journal of Semantic Computing (IJSC)},
+  year = {2023},
+  volume = {17},
+  number = {3},
+  pages = {387--410},
+  doi = {10.1142/S1793351X23620027},
+  publisher = {World Scientific Publishing Company}
+}
+```
+Contact: *andreas.kriegler@tuwien.ac.at*
+
+## Introduction
 We publish the annotation tool for PrimitivePose in this project.
 
 PrimitivePose is an end-to-end Convolutional Neural Network built on CenterNet for 3D bounding box estimation of unseen objects.
@@ -14,20 +41,12 @@ The manual annotation effort is resonable (3-5 minutes per image) - this pipelin
 <img width=80% src="assets/ex_visu.png">
 </p>
 
-The annotation pipeline was presented in our paper: [IJSC](https://dx.doi.org/10.1142/S1793351X23620027), [RG](https://www.researchgate.net/publication/371451754_PrimitivePose_Generic_Model_and_Representation_for_3D_Bounding_Box_Prediction_of_Unseen_Objects#fullTextFileContent), [(PDF)](https://github.com/akriegler/akriegler.github.io/blob/master/assets/pdf/kriegler2023.pdf)
-
-Authors: [Andreas Kriegler](https://www.researchgate.net/profile/Andreas-Kriegler), 
-[Csaba Beleznai](https://www.ait.ac.at/ueber-das-ait/researcher-profiles/?tx_aitprofile_pi1%5Bname%5D=Beleznai+Csaba),
-[Markus Murschitz](https://www.researchgate.net/profile/Markus-Murschitz),
-[Kai Göbel](https://www.researchgate.net/profile/Kai-Goebel-2)
-and [Margrit Gelautz](https://informatics.tuwien.ac.at/people/margrit-gelautz) 
-
 It is possible to also use multiple cameras at once, to obtain multiple distinct views per object configuration. This also helps
 validate the pose annotation step. 
 
-Send questions to: andreas.kriegler@tuwien.ac.at
 
-### Requirements
+
+## Requirements
 * A static RGB camera. This can anything from a cellphone camera to industrial sensors, fixed via camera mount or tripod.
 * A calibration pattern. It should be rectangular, with one known side length and be in scale with the scene.
 * The fSpy software. Used to create a virtual camera file with intrinsic and extrinsic calibration.
@@ -36,7 +55,7 @@ Send questions to: andreas.kriegler@tuwien.ac.at
 All software is freely available. The tool was tested on Ubuntu 20.04, using Blender 3.0.1, fSpy 1.0.3 and Python 3.9.
 Additionally it was tested on Windows 10, using Blender 3.0.1, fSpy 1.0.3 and Python 3.9.7
 
-### Sofware-Setup
+## Sofware-Setup
 * [Download and install the Blender software](https://www.blender.org/download/) 
 * [Download and install the fSpy toolkit](https://fspy.io)
 * [Download and install the fSpy addon for Blender](https://github.com/stuffmatic/fSpy-Blender)
@@ -50,7 +69,7 @@ Set the python interpreter in the IDE to Blender python. Then:
 * Configure the blender path in [run_blender.py](run_blender.py) and set your own .blend file
 * (Optional) ZEDCam setup: The only requirements are a static monocular camera. We used the ZEDCam2 although stereo images are NOT required ([doc](https://www.stereolabs.com/docs/installation/)). 
 
-### 1) Extrinsic camera calibration + capturing image data
+## 1) Extrinsic camera calibration + capturing image data
 A calibration pattern is required that features two sets of two parallel lines, the sets orthogonal to one another, for example a rectangle. 
 One side length has to be known. The size of the pattern should be in adequate scale with the scene and the camera distance. For example if you know your objects can be in 
 an area of size 4m x 4m a calibration pattern of only 0.2m x 0.2m will (most likely) lead to poor results. 
@@ -70,7 +89,7 @@ You can now remove the pattern and take pictures of the scene featuring the obje
 
 If you want to take pictures with a different camera pose remember to capture another calibration frame.
 
-### 2) Virtual camera model
+## 2) Virtual camera model
 
 Start the fSpy application and drop a calibration frame onto the GUI. Then drag the endpoints of the green and red line 
 segments to align the axes with your calibration rectangle. This also defines the orientation of the world coordinate frame.
@@ -99,7 +118,7 @@ Example on Windows:
 <img width=80% src="assets/fSpy_with_rectangle.png">
 </p>
 
-### 3) Blender object pose annotation
+## 3) Blender object pose annotation
 
 Open Blender, e.g. by running [start_blender.py](run_blender.py). Load the .fspy file created previously via "File -> Import -> fSpy". 
 
@@ -136,7 +155,7 @@ It is likely that the Blender bounding boxes differ in size from the real object
 irrelevant for extracting the pose of the objects. If you notice strong disagreements that also affect angles you might
 want to consider repeating the calibration with fSpy. 
 
-### 4) Annotation export 
+## 4) Annotation export 
 
 When all objects have been aligned for the current frame, pose annotations can be calculated and exported. To do so,
 create a new collection (right-click Scene Collection -> New Collection) called "POSE_OBJECTS". For all objects that are 
@@ -163,7 +182,7 @@ Important parameters of the script (see function <set_params> in [get_pose_anno.
 * Set 'out_path' to the desired output folder, otherwise the location of the images is used.
 * Enable 'get_occlusion' if you want to use Blender ray-casting methods to get occlusion metrics. 
 
-### Explanations for the content of exported annotation .ymls:
+## Explanations for the content of exported annotation .ymls:
 * img_file: relative path to the img file from the point of the .blend file location
 * cam_mat: 3x3 camera matrix as estimated by fSpy
 
